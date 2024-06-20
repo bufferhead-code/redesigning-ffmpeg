@@ -1,0 +1,27 @@
+---
+import everyLogo from "../../images/logo-every.svg";
+import damnLogo from "../../images/logo-damn.svg";
+import mediaLogo from "../../images/logo-media.svg";
+import companyLogo from "../../images/logo-company.svg";
+import onLogo from "../../images/logo-on.svg";
+import earthLogo from "../../images/logo-earth.svg";
+import {Image} from "astro:assets";
+---
+<div class="relative mt-12 sm:mt-28 mb-12">
+    <div class="absolute w-full h-full top-0 left-0 "
+         style="background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 90%, rgba(255, 255, 255, 0) 100%);">
+    </div>
+    <div class="isolate">
+        <div class="text-gray-500 text-lg sm:text-xl uppercase text-center pt-2 font-bold pb-3 sm:pb-0">
+            Used and loved by
+        </div>
+        <div class="flex flex-wrap sm:flex-nowrap w-full items-center justify-center space-y-3 sm:space-y-0 space-x-5 sm:space-x-12 text-gray-400">
+            <Image src={everyLogo} alt="every" class="h-10 sm:h-24"/>
+            <Image src={damnLogo} alt="damn" class="h-10 sm:h-24"/>
+            <Image src={mediaLogo} alt="media" class="h-10 sm:h-24"/>
+            <Image src={companyLogo} alt="company" class="h-10 sm:h-24"/>
+            <Image src={onLogo} alt="on" class="h-10 sm:h-24"/>
+            <Image src={earthLogo} alt="earth" class="h-10 sm:h-24"/>
+        </div>
+    </div>
+</div>

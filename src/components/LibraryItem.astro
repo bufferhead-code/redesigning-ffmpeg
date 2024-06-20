@@ -1,0 +1,15 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="flex space-x-2">
+    <div class="pt-0.5">
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L9 9L2 16" stroke="#00CB00" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <div>
+        <h3 class="font-semibold">{title}</h3>
+        <p class="py-0.5 sm:py-1 max-w-md text-sm sm:text-base"> <slot></slot> </p>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+---
+import openSourceBackground from "../../images/open-source-background.svg";
+import openSourceIcon from "../../images/open-source-icon.svg";
+import crossPlatformBackground from "../../images/cross-platform-background.svg";
+import crossPlatformIcon from "../../images/cross-platform-icon.svg";
+import fastBackground from "../../images/fast-bg.svg";
+import fastIcon from "../../images/fast-icon.svg";
+import battleTestedBackground from "../../images/battle-tested-background.svg";
+import battleTestedIcon from "../../images/battle-tested-icon.svg";
+import {Image} from "astro:assets";
+---
+<div class="sm:grid sm:grid-cols-[0.8fr_1fr_1fr] sm:grid-rows-2 gap-3 mt-12 relative z-20 space-y-4 sm:space-y-0">
+    <div class="sm:row-span-2 border bg-white relative border-gray-150 pb-3 rounded-xl shadow">
+        <div class="w-full h-[300px] left-0 top-0 absolute bg-no-repeat"
+             style={`background-size: cover; background-image: url(${openSourceBackground.src});`}></div>
+        <div class="px-5 py-6 text-center isolate">
+            <Image src={openSourceIcon} alt="Open Source Logo" class="mx-auto isolate"></Image>
+            <h3 class="py-3 uppercase font-bold font-display text-2xl">Open Source</h3>
+            <p class="max-w-[300px] mx-auto font-medium text-gray-700 text-sm sm:text-base">ffmpeg is mostly licensed under
+                LGPL,
+                with some parts using GPL.</p>
+            <p class="pt-2 sm:pt-4 max-w-[300px] mx-auto text-sm sm:text-base font-medium text-gray-700">It is free and open-source
+                software which allows for a wide variety of use cases and incorporation in other
+                software
+                products</p>
+        </div>
+    </div>
+    <div class="sm:col-start-2 relative isolate">
+        <div class="px-5 py-3 overflow-hidden h-full items-center border bg-white relative border-gray-150 pb-3 rounded-xl shadow flex">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat"
+                 style={`background-position: center right; background-image: url(${crossPlatformBackground.src});`}></div>
+            <div class="isolate">
+                <h3 class="pt-3 pb-2 uppercase font-bold font-display text-xl">Cross Platform</h3>
+                <p class="max-w-[300px] mx-auto font-medium text-sm text-gray-700">ffmpeg is designed to
+                    run
+                    cross-platform on all sorts of popular operating systems.</p>
+            </div>
+            <Image src={crossPlatformIcon} alt="Open Source Logo" class="mx-auto isolate"></Image>
+        </div>
+    </div>
+    <div class="col-start-3 relative isolate">
+        <div class="px-5 py-3 h-full items-center border bg-white relative border-gray-150 pb-3 rounded-xl shadow flex overflow-hidden">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat"
+                 style={`background-position: center center; background-position: center right; background-image: url(${fastBackground.src});`}></div>
+            <div class="isolate">
+                <h3 class="pt-3 pb-2 uppercase font-bold font-display text-xl">Super Fast</h3>
+                <p class="max-w-[300px] mx-auto font-medium text-sm text-gray-700">ffmpeg strives to
+                    always
+                    push the limits on performance and speed of its software.</p>
+            </div>
+            <Image src={fastIcon} alt="Open Source Logo" class="mx-auto isolate"></Image>
+        </div>
+    </div>
+    <div class="col-span-2">
+        <div class="px-5 py-3 overflow-hidden h-full items-center border bg-white relative border-gray-150 pb-3 rounded-xl space-y-5 sm:space-y-0 shadow sm:flex justify-between">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat"
+                 style={`background-position: 195% 60%; background-image: url(${battleTestedBackground.src});`}></div>
+            <div class="max-w-md isolate">
+                <h3 class="pt-3 pb-2 uppercase font-bold font-display text-xl">Battle-Tested</h3>
+                <p class=" mx-auto font-medium text-sm text-gray-700">ffmpeg is used in video and audio
+                    software all over the world and powers some of the biggest media companies of the
+                    world
+                    under the hood. It is used, tested and loved by thousands of developers for its
+                    reliability and performance.</p>
+            </div>
+            <Image src={battleTestedIcon} alt="Open Source Logo" class="mx-auto isolate"></Image>
+        </div>
+    </div>
+</div>

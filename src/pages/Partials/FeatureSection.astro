@@ -1,0 +1,121 @@
+---
+import compressionIcon from "../../images/compression-icon.svg?raw";
+import scalingIcon from "../../images/scaling-icon.svg?raw";
+import editingIcon from "../../images/editing-icon.svg?raw";
+import FeatureExplainerButtonSection from "../../components/FeatureExplainerButtonSection.astro";
+import FeatureItem from "../../components/FeatureItem.astro";
+
+import encodeIcon from "../../images/encode.svg?raw";
+import decodeIcon from "../../images/decode.svg?raw";
+
+import transcodeIcon from '../../images/transcode.svg?raw'
+import multiplexingIcon from '../../images/multiplexing.svg?raw'
+import demultiplexingIcon from '../../images/demultiplexing.svg?raw'
+import streamIcon from '../../images/stream.svg?raw'
+import filterIcon from '../../images/filter.svg?raw'
+import recordingIcon from '../../images/recording.svg?raw'
+import featureBg from "../../images/feature-background.svg";
+---
+<div class="relative">
+    <div class="absolute w-full h-full bg-center bg-no-repeat bg-contain -mt-44" style={`background-image: url(${featureBg.src});`}>
+    </div>
+    <div class="container mx-auto px-4 max-w-6xl isolate">
+        <div class="pt-24" x-data="featureSelection">
+            <h3 class="mx-auto text-2xl sm:text-5xl font-display text-center">
+                Your All-In-One Media Suite
+            </h3>
+            <p class="max-w-lg text-center mx-auto text-base sm:text-lg pt-4 text-gray-500 font-semibold">ffmpeg allows for
+                extensive video and audio editing, transcoding, compression and more. All in one simple CLI. </p>
+            <div class="flex flex-wrap sm:flex-nowrap sm:space-x-6 gap-3 sm:gap-0 justify-center pt-6 ">
+                <button @click="selected = 'compression'"
+                        :class="selected === 'compression' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+                        class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3">
+                        <span class="opacity-50">
+                            <Fragment slot="icon" set:html={compressionIcon}/>
+                        </span>
+                    <span class="uppercase font-semibold">
+                            Compression
+                        </span>
+                </button>
+                <button @click="selected = 'scaling'"
+                        :class="selected === 'scaling' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+                        class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3">
+                    <Fragment slot="icon" set:html={scalingIcon}/>
+                    <span class="uppercase font-semibold">
+                            Scaling
+                        </span>
+                </button>
+                <button @click="selected = 'editing'"
+                        :class="selected === 'editing' ? 'bg-primary text-white' : 'bg-white text-gray-700'"
+                        class="shadow px-3 py-1.5 rounded-lg flex items-center space-x-3">
+                    <Fragment slot="icon" set:html={editingIcon}/>
+                    <span class="uppercase font-semibold">
+                            Editing
+                        </span>
+                </button>
+            </div>
+            <div class="sm:grid sm:grid-cols-5 w-full pt-6 gap-8">
+                <div class="col-span-3">
+                    <canvas id="canvas" class="max-w-full sm:max-h-full max-h-[250px]" style="width: 630px; height: 400px;"></canvas>
+                </div>
+                <div class="col-span-2 pt-8 space-y-3">
+                    <FeatureExplainerButtonSection
+                            title="Compression"
+                            description="Reduce the file size of basically any video or audio file and save up disk space."
+                            key="compression">
+                        <Fragment slot="icon" set:html={compressionIcon}/>
+                    </FeatureExplainerButtonSection>
+                    <FeatureExplainerButtonSection
+                            title="Scaling"
+                            description="Increase or decrease the size of video. You can even crop and stretch them to your liking."
+                            key="scaling">
+                        <Fragment slot="icon" set:html={scalingIcon}/>
+                    </FeatureExplainerButtonSection>
+                    <FeatureExplainerButtonSection
+                            title="Editing"
+                            description="Trim, Cut, Watermark. Perfect for automating repetitive editing tasks."
+                            key="editing">
+                        <Fragment slot="icon" set:html={editingIcon}/>
+                    </FeatureExplainerButtonSection>
+
+
+                </div>
+            </div>
+            <div class="flex justify-center flex-wrap pt-8">
+                <FeatureItem title="Encode">
+                    ffmpeg supports encode video and audio files into more than 200 codecs.
+                    <Fragment slot="icon" set:html={encodeIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Decode">
+                    Use any of the over 500 supported video and audio codecs to decode your media files.
+                    <Fragment slot="icon" set:html={decodeIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Transcode">
+                    Convert video and audio files from one codec to another one with extensive support.
+                    <Fragment slot="icon" set:html={transcodeIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Multiplexing">
+                    Combine audio and video files into one combined video file right from the command line interface.
+                    <Fragment slot="icon" set:html={multiplexingIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Demultiplexing">
+                    Split video and audio channels apart. Convert video to audio files with ease.
+                    <Fragment slot="icon" set:html={demultiplexingIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Stream">
+                    Stream to an server or destination via the build in streaming support.
+                    <Fragment slot="icon" set:html={streamIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Filter">
+                    Apply a variety of filters f.e. to change the brightness or even add subtitles to your videos.
+                    <Fragment slot="icon" set:html={filterIcon}/>
+                </FeatureItem>
+                <FeatureItem title="Recording">
+                    Record your screen or any audio or video stream with ffmpeg.
+                    <Fragment slot="icon" set:html={recordingIcon}/>
+                </FeatureItem>
+
+            </div>
+        </div>
+    </div>
+</div>

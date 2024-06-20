@@ -1,0 +1,143 @@
+---
+
+import {Image} from "astro:assets";
+
+import ffplayLogo from '../../images/ffplay.svg';
+import ffmpegLogo from '../../images/logo.svg';
+import ffprobeLogo from '../../images/ffprobe.svg';
+import LibraryItem from "../../components/LibraryItem.astro";
+
+---
+
+<div class="container mx-auto px-4 max-w-6xl isolate">
+    <h3 class="text-center text-2xl sm:text-4xl font-display font-bold">The Right Tool for your Needs</h3>
+    <p class="py-3 text-gray-700 text-center font-medium max-w-lg mx-auto">We provide a variety of CLI tools to get the
+        job done fast. Choose ffmpeg, ffplay, ffprobe to get exactly what you want.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
+        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+            <div class="flex justify-center">
+                <Image src={ffplayLogo} alt="FFplay" class="h-12 my-6"></Image>
+            </div>
+            <p class="text-center text-gray-600 font-medium">A simple media player based on SDL and the FFmpeg libraries.</p>
+            <div class="py-6 px-5 space-y-3">
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FF5F57"/>
+                    </svg>
+                    <span>
+                    Play any file or stream
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FF5F57"/>
+                    </svg>
+                    <span>
+                    Test various FFmpeg APIs
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FF5F57"/>
+                    </svg>
+                    <span>
+                    Use Filters and more
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+            <div class="flex justify-center">
+                <Image src={ffmpegLogo} alt="FFMpeg" class="h-12 my-6"></Image>
+            </div>
+            <p class="text-center text-gray-600 font-semibold">A command line tool to convert multimedia files between formats.</p>
+
+            <div class="py-6 px-5 space-y-3">
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#00CB00"/>
+                    </svg>
+                    <span>
+                    Convert and Transform
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#00CB00"/>
+                    </svg>
+                    <span>
+                    Read and Write to Streams
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#00CB00"/>
+                    </svg>
+                    <span>
+                    Record Audio and Video
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+            <div class="flex justify-center">
+                <Image src={ffprobeLogo} alt="FFprobe" class="h-12 my-6"></Image>
+            </div>
+            <p class="text-center text-gray-600 font-semibold px-6">A simple multimedia stream analyzer.</p>
+            <div class="py-6 px-5 space-y-3">
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FEBC2E"/>
+                    </svg>
+                    <span>
+                    Check container format
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FEBC2E"/>
+                    </svg>
+                    <span>
+                    Get media meta information
+                </span>
+                </div>
+                <div class="flex items-center space-x-2 font-medium">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0C20.1798 0 26 5.82021 26 13C26 20.1798 20.1798 26 13 26C5.82021 26 0 20.1798 0 13C0 5.82021 5.82021 0 13 0ZM13 2.16667C7.01675 2.16667 2.16667 7.01675 2.16667 13C2.16667 18.9832 7.01675 23.8333 13 23.8333C18.9832 23.8333 23.8333 18.9832 23.8333 13C23.8333 7.01675 18.9832 2.16667 13 2.16667ZM18.8435 8.62875C19.2064 8.99167 19.2064 9.57992 18.8435 9.94229L11.6068 17.179C11.4327 17.3529 11.1965 17.4507 10.9503 17.4507C10.7041 17.4507 10.468 17.3529 10.2938 17.179L7.23612 14.1207C7.06201 13.9465 6.96422 13.7103 6.96427 13.464C6.96432 13.2177 7.06221 12.9816 7.2364 12.8074C7.41058 12.6333 7.6468 12.5355 7.89309 12.5356C8.13937 12.5356 8.37555 12.6335 8.54967 12.8077L10.2938 14.5519C10.6568 14.9148 11.2445 14.9148 11.6074 14.5519L17.53 8.62929C17.8929 8.26638 18.4806 8.26583 18.8435 8.62875Z" fill="#FEBC2E"/>
+                    </svg>
+                    <span>
+                    Output as JSON, CSV, XML
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center text-2xl sm:text-4xl font-display font-bold pt-16">FFmpeg Libraries for developers</h3>
+    <p class="py-3 text-gray-700 text-center text-sm sm:text-base font-medium max-w-lg mx-auto">ffmpeg does not only provide tools for end users but also libraries and APIs for developers to use in their custom workflows.</p>
+    <div class="grid sm:grid-cols-2 gap-6 py-8 sm:py-16">
+        <LibraryItem title="libavcodec">
+            A library containing decoders and encoders for audio/video codecs.
+        </LibraryItem>
+        <LibraryItem title="libavformat">
+            A library containing demuxers and muxers for multimedia container formats.
+        </LibraryItem>
+        <LibraryItem title="libavfilter">
+            A library containing media filters.
+        </LibraryItem>
+        <LibraryItem title="libswscale">
+            A library performing highly optimized image scaling and color space/pixel format conversion operations.
+        </LibraryItem>
+        <LibraryItem title="libavutil">
+            A library containing functions for simplifying programming, including random number generators, data structures, mathematics routines, core multimedia utilities, and much more.
+        </LibraryItem>
+        <LibraryItem title="libavdevice">
+            A library containing input and output devices for grabbing from and rendering to many common multimedia input/output software frameworks, including Video4Linux, Video4Linux2, VfW, and ALSA.
+        </LibraryItem>
+        <LibraryItem title="libswresample">
+            A library performing highly optimized audio resampling, rematrixing and sample format conversion operations.
+        </LibraryItem>
+
+    </div>
+</div>

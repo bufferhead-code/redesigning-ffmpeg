@@ -1,0 +1,46 @@
+---
+import ffmpegLogo from '../images/logo-inverted.svg'
+import {Image} from "astro:assets";
+import rssIcon from '../images/rss.svg'
+import facebookIcon from '../images/facebook.svg'
+import twitterIcon from '../images/twitter.svg'
+import SecondaryButton from "./SecondaryButton.astro";
+---
+
+<div class="bg-gray-800 pt-14 pb-24">
+    <div class="container px-4 max-w-6xl items-center space-y-8 sm:space-y-0 sm:grid grid-cols-6 mx-auto">
+        <div class="col-span-2">
+            <Image src={ffmpegLogo} alt="ffmpeg logo"> </Image>
+            <div class="text-gray-400 max-w-[200px] py-3">
+                The Swiss-Army-Knife for Video and Audio
+            </div>
+            <div class="flex space-x-2 text-gray-400">
+                <Image src={rssIcon} alt="RSS"></Image>
+                <Image src={facebookIcon} alt="RSS"></Image>
+                <Image src={twitterIcon} alt="RSS"></Image>
+            </div>
+        </div>
+        <div class="text-gray-400 flex flex-col space-y-1.5">
+            <div class="font-semibold text-white pb-1">About</div>
+            <a>Contact us</a>
+            <a>Security</a>
+            <a>Legal</a>
+        </div>
+        <div class="text-gray-400 flex flex-col space-y-1.5">
+            <div class="font-semibold text-white pb-1">Community</div>
+            <a>Code of Conduct</a>
+            <a>Bug Reports</a>
+            <a>Wiki</a>
+        </div>
+        <div class="text-gray-400 flex flex-col space-y-1.5">
+            <div class="font-semibold text-white pb-1">Developers</div>
+            <a>Source Code</a>
+            <a>Contribute</a>
+            <a>FATE</a>
+        </div>
+        <div class="flex items-center justify-center">
+            <SecondaryButton>Donate</SecondaryButton>
+        </div>
+    </div>
+
+</div>

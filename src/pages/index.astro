@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import headerBg from "../images/header-bg.svg";
+import FeatureSection from "./Partials/FeatureSection.astro";
+import BentoGrid from "./Partials/BentoGrid.astro";
+import Testimonials from "./Partials/Testimonials.astro";
+import Hero from "./Partials/Hero.astro";
+import InstallationInstructions from "./Partials/InstallationInstructions.astro";
+import ToolsSection from "./Partials/ToolsSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Welcome to Astro.">
+    <div class="bg-gradient-to-r from-[#00CB00] to-[#006500] w-full h-3"></div>
+    <main class="">
+        <div class="relative" style={`background-image: url(${headerBg.src});`}>
+            <div class="absolute left-0 bottom-0 bg-gradient-to-t w-full from-white via-white to-transparent h-[400px]"></div>
+            <div class="container mx-auto px-4 pt-12 sm:pt-24 max-w-6xl">
+                <Hero></Hero>
+                <Testimonials></Testimonials>
+                <BentoGrid></BentoGrid>
+            </div>
+        </div>
+        <FeatureSection></FeatureSection>
+        <InstallationInstructions></InstallationInstructions>
+        <ToolsSection></ToolsSection>
+        <Footer></Footer>
+
+    </main>
+    <div class="py-1.5 font-medium bg-white shadow border-t border-gray-150 text-gray-500 fixed w-screen bottom-0 left-0 z-30 isolate ">
+        <div class="container max-w-6xl px-4 mx-auto sm:flex justify-between text-xs space-y-1 sm:space-y-0 sm:text-sm items-center">
+            <span>
+                This is not the <a class="underline" target="_blank" href="http://ffmpeg.org">official ffmpeg website</a>, but a unsolicited landing page redesign.
+            </span>
+            <a target="_blank" href="https://www.youtube.com/channel/UCxcM8UpQaVJUcVmfXSj4BLg" class="flex items-center hover:bg-gray-100 transition space-x-2 text-sm font-semibold border border-gray-150 rounded px-1.5">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="text-[#FF0000]">
+                    <path fill="currentColor"
+                          d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/>
+                </svg>
+                <span>
+                        Watch how this redesign was made
+                    </span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        import {Rive} from "@rive-app/canvas";
+        import Alpine from "alpinejs";
+
+        const r = new Rive({
+            src: "/animations/compression.riv",
+            // OR the path to a discoverable and public Rive asset
+            // src: '/public/example.riv',
+            canvas: document.getElementById("canvas"),
+            autoplay: true,
+            stateMachines: ["scenes"],
+            onLoad: () => {
+                r.resizeDrawingSurfaceToCanvas();
+            },
+        });
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('featureSelection', () => ({
+                selected: 'compression',
+                init() {
+                    this.$watch('selected', (value) => {
+                        const inputs = window.riveFeatureTerminal.stateMachineInputs('scenes');
+                        // Find the input you want to set a value for, or trigger
+                        const bumpTrigger = inputs.find(i => i.name === value);
+                        bumpTrigger.fire();
+
+                    })
+                }
+            }))
+
+        })
+
+        window.addEventListener(
+            "resize",
+            () => {
+                r.resizeDrawingSurfaceToCanvas();
+            },
+            false
+        );
+
+        window.riveFeatureTerminal = r;
+
+    </script>
+</Layout>
+
