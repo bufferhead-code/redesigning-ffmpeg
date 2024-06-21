@@ -7,6 +7,10 @@ import ffmpegLogo from '../../images/logo.svg';
 import ffprobeLogo from '../../images/ffprobe.svg';
 import LibraryItem from "../../components/LibraryItem.astro";
 
+import ffplayBackground from '../../images/ffplay-background.svg';
+import ffmpegBackground from '../../images/ffmpeg-background.svg';
+import ffprobeBackground from '../../images/ffplay-background.svg';
+
 ---
 
 <div class="container mx-auto px-4 max-w-6xl isolate">
@@ -15,7 +19,9 @@ import LibraryItem from "../../components/LibraryItem.astro";
         job done fast. Choose ffmpeg, ffplay, ffprobe to get exactly what you want.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
-        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+        <div class="bg-white relative shadow border border-gray-200 rounded-lg p-4">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat bg-contain"
+                 style={`background-position: top center; background-image: url(${ffplayBackground.src});`}></div>
             <div class="flex justify-center">
                 <Image src={ffplayLogo} alt="FFplay" class="h-12 my-6"></Image>
             </div>
@@ -47,7 +53,10 @@ import LibraryItem from "../../components/LibraryItem.astro";
                 </div>
             </div>
         </div>
-        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+        <div class="bg-white shadow border relative border-gray-150 rounded-lg p-4">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat bg-contain"
+                 style={`background-position: top center; background-image: url(${ffmpegBackground.src});`}></div>
+
             <div class="flex justify-center">
                 <Image src={ffmpegLogo} alt="FFMpeg" class="h-12 my-6"></Image>
             </div>
@@ -80,7 +89,9 @@ import LibraryItem from "../../components/LibraryItem.astro";
                 </div>
             </div>
         </div>
-        <div class="bg-white shadow border border-gray-150 rounded-lg p-4">
+        <div class="bg-white shadow relative border border-gray-150 rounded-lg p-4">
+            <div class="w-full h-full right-0 top-0 absolute bg-no-repeat bg-contain"
+                 style={`background-position: top center; background-image: url(${ffprobeBackground.src});`}></div>
             <div class="flex justify-center">
                 <Image src={ffprobeLogo} alt="FFprobe" class="h-12 my-6"></Image>
             </div>
