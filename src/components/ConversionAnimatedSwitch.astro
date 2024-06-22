@@ -1,0 +1,106 @@
+---
+import headerTerminal from "../images/header-terminal.svg";
+import { Image } from "astro:assets";
+---
+
+<div class="bg-white isolate mt-6">
+  <div
+    class="flex pt-6 justify-center flex-wrap items-center space-x-2 sm:space-x-5"
+  >
+    <span class="uppercase text-gray-700 text-lg sm:text-2xl font-bold">
+      Convert
+    </span>
+    <span
+      id="convertion__from"
+      class="h-8 [&>span]:absolute [&>span]:top-1/2 [&>span]:-translate-y-1/2 [&>span]:left-1/2 [&>span]:-translate-x-1/2 [&>span]:transition-all [&>span]:!duration-500 !duration-500 transition-all bg-accent relative overflow-hidden font-bold text-white px-3 text-base sm:text-xl rounded"
+    ></span>
+    <svg
+      class="h-4 sm:h-5"
+      viewBox="0 0 40 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M28.3969 1.19689C29.3927 0.201053 31.0073 0.201053 32.0031 1.19689L38.8031 7.99689C39.799 8.99273 39.799 10.6073 38.8031 11.6031L32.0031 18.4031C31.0073 19.399 29.3927 19.399 28.3969 18.4031C27.4011 17.4073 27.4011 15.7927 28.3969 14.7969L30.8438 12.35H3.00001C1.59169 12.35 0.450012 11.2083 0.450012 9.80001C0.450012 8.39169 1.59169 7.25001 3.00001 7.25001H30.8438L28.3969 4.80313C27.4011 3.8073 27.4011 2.19273 28.3969 1.19689Z"
+        fill="#22272E"></path>
+    </svg>
+
+    <span
+      id="convertion__to"
+      class="h-8 [&>span]:absolute [&>span]:top-1/2 [&>span]:-translate-y-1/2 [&>span]:left-1/2 [&>span]:-translate-x-1/2 [&>span]:transition-all [&>span]:!duration-500 !duration-500 transition-all relative overflow-hidden bg-primary font-bold text-white px-3 text-base sm:text-xl rounded"
+    ></span>
+  </div>
+  <div class="relative">
+    <Image src={headerTerminal} alt="Terminal" class="w-full" />
+    <div
+      class="flex absolute font-code top-0 text-white isolate text-sm sm:text-2xl pt-14 sm:pt-20 px-6 sm:px-10"
+    >
+      <span class="text-gray-500">$</span>
+      <span class="text-[#42A0F6] flex relative overflow-hidden h-[29px]"
+        ><span class="text-white mr-2">ffmpeg -i</span> input<span
+          class="lowercase inline-block relative overflow-hidden h-[29px] [&>span]:absolute [&>span]:top-[calc(50%+1px)] [&>span]:-translate-y-1/2 [&>span]:-left-1 [&>span]:transition-all [&>span]:!duration-500 !duration-500 transition-all"
+          id="convertion__from-terminal"></span></span
+      >
+      <span class="flex overflow-hidden h-[29px] text-secondary"
+        >output<span
+          class="lowercase inline-block relative overflow-hidden h-[29px] [&>span]:absolute [&>span]:top-[calc(50%+1px)] [&>span]:-translate-y-1/2 [&>span]:-left-1 [&>span]:transition-all [&>span]:!duration-500 !duration-500 transition-all"
+          id="convertion__to-terminal"></span></span
+      >
+    </div>
+  </div>
+</div>
+
+<script defer>
+  const DELAY_BETWEEN_ITERATION = 1750;
+  const conversionPairs = [
+    [".MP4", ".AVI"],
+    [".OGG", ".MP3"],
+    [".MKV", ".MOV"],
+  ];
+  const parentElements = [
+    document.querySelector("#convertion__from"),
+    document.querySelector("#convertion__from-terminal"),
+    document.querySelector("#convertion__to"),
+    document.querySelector("#convertion__to-terminal"),
+  ];
+
+  conversionPairs.forEach((v, i) => {
+    const newElements = [
+      document.createElement("span"),
+      document.createElement("span"),
+      document.createElement("span"),
+      document.createElement("span"),
+    ];
+    newElements.forEach((o, k) => {
+      const text = k - 1 <= 0 ? v[0] : v[1];
+      o.innerText = text;
+      o.style.marginTop = `${i * 24}px`;
+      parentElements[k].appendChild(o);
+    });
+  });
+
+  const switchBetweenConversions = (conversionIndex) => {
+    const max = conversionPairs.length - 1;
+    parentElements.forEach((v, i) => {
+      const currentConvertionPairElement = v.children[conversionIndex];
+      v.style.width = `${currentConvertionPairElement.clientWidth + 16}px`;
+
+      console.log(conversionIndex);
+      if (conversionIndex === 0) {
+        v.children[max].style.marginTop = `${max * 24}px`;
+      } else {
+        v.children[conversionIndex - 1].style.marginTop =
+          `${(conversionIndex + 1) * 24}px`;
+      }
+
+      currentConvertionPairElement.style.marginTop = 0;
+    });
+
+    const next = conversionIndex === max ? 0 : conversionIndex + 1;
+    setTimeout(() => switchBetweenConversions(next), DELAY_BETWEEN_ITERATION);
+  };
+
+  switchBetweenConversions(0);
+</script>
