@@ -1,60 +1,39 @@
 ---
 import logo from "../../images/logo.svg";
-import headerTerminal from "../../images/header-terminal.svg";
-import {Image} from "astro:assets";
+import ConversionAnimatedSwitch from "../../components/ConversionAnimatedSwitch.astro";
+import { Image } from "astro:assets";
 import SecondaryButton from "../../components/SecondaryButton.astro";
 import InstallButton from "../../components/InstallButton.astro";
 ---
+
 <div class="sm:grid grid-cols-2 gap-x-6">
-    <div class="relative">
-        <div class="absolute w-full h-full top-0 left-0"
-             style="background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 95%, rgba(255, 255, 255, 0) 110%);">
-        </div>
-        <div class="isolate">
-            <Image src={logo} alt="FFMPEG Logo" class="h-10 sm:h-12 w-auto ml-4"/>
-            <div class="px-3">
-                <h1 class="text-3xl sm:text-5xl max-w-lg font-display pt-7 sm:pb-4 pb-2 leading-[110%]">
-                    The Swiss-Army-Knife
-                    for Video and Audio
-                </h1>
-                <p class="text-base sm:text-xl max-w-md text-gray-700">Transcode, Compress and Edit basically any
-                    audio
-                    or video file in the universe.</p>
-                <div class="pt-7 sm:flex sm:space-x-6 space-y-3 sm:space-y-0">
-                    <InstallButton></InstallButton>
-
-                    <SecondaryButton href="#">Learn More</SecondaryButton>
-                </div>
-
-            </div>
-        </div>
-
+  <div class="relative">
+    <div
+      class="absolute w-full h-full top-0 left-0"
+      style="background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 95%, rgba(255, 255, 255, 0) 110%);"
+    >
     </div>
-    <div class="flex items-center">
-        <div class="bg-white isolate mt-6">
-            <div class="flex pt-6 justify-center flex-wrap items-center space-x-2 sm:space-x-5">
-						<span class="uppercase text-gray-700 text-lg sm:text-2xl font-bold">
-							Convert
-						</span>
-                <span class="bg-accent font-bold text-white px-3 text-base sm:text-xl py-1.5 rounded">.MP4</span>
-                <svg class="h-4 sm:h-5" viewBox="0 0 40 20" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M28.3969 1.19689C29.3927 0.201053 31.0073 0.201053 32.0031 1.19689L38.8031 7.99689C39.799 8.99273 39.799 10.6073 38.8031 11.6031L32.0031 18.4031C31.0073 19.399 29.3927 19.399 28.3969 18.4031C27.4011 17.4073 27.4011 15.7927 28.3969 14.7969L30.8438 12.35H3.00001C1.59169 12.35 0.450012 11.2083 0.450012 9.80001C0.450012 8.39169 1.59169 7.25001 3.00001 7.25001H30.8438L28.3969 4.80313C27.4011 3.8073 27.4011 2.19273 28.3969 1.19689Z"
-                          fill="#22272E"/>
-                </svg>
+    <div class="isolate">
+      <Image src={logo} alt="FFMPEG Logo" class="h-10 sm:h-12 w-auto ml-4" />
+      <div class="px-3">
+        <h1
+          class="text-3xl sm:text-5xl max-w-lg font-display pt-7 sm:pb-4 pb-2 leading-[110%]"
+        >
+          The Swiss-Army-Knife for Video and Audio
+        </h1>
+        <p class="text-base sm:text-xl max-w-md text-gray-700">
+          Transcode, Compress and Edit basically any audio or video file in the
+          universe.
+        </p>
+        <div class="pt-7 sm:flex sm:space-x-6 space-y-3 sm:space-y-0">
+          <InstallButton />
 
-                <span class="bg-primary font-bold text-white px-3 text-base sm:text-xl py-1.5 rounded">.AVI</span>
-            </div>
-            <div class="relative">
-                <Image src={headerTerminal} alt="Terminal" class="w-full"/>
-                <div class="absolute font-code top-0 text-white isolate text-sm sm:text-2xl pt-14 sm:pt-20 px-6 sm:px-10">
-                    <span class="text-gray-500">$</span> ffmpeg -i <span
-                        class="text-[#42A0F6]">input.mp4</span> <span
-                        class="text-secondary">output.avi</span>
-                </div>
-            </div>
+          <SecondaryButton href="#">Learn More</SecondaryButton>
         </div>
-
+      </div>
     </div>
+  </div>
+  <div class="flex items-center">
+    <ConversionAnimatedSwitch />
+  </div>
 </div>
